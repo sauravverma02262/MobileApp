@@ -1,0 +1,31 @@
+<ion-view view-title="SignUp">
+    <div class="bar bar-header">
+        <h1 class="title">Edit Profile</h1>
+    </div>
+    <ion-content class="padding" style="margin-top:50px;">
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-model="profile.address.city" placeholder="City">
+            </label>
+        </div> 
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-model="profile.address.state" placeholder="State">
+            </label>
+        </div>
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-model="profile.address.country" placeholder="Country">
+            </label>
+        </div>
+        <div class="list">
+            <label class="item item-input">
+                <textarea type="text" ng-model="profile.discription" placeholder="About Me.."></textarea>
+            </label>
+        </div>
+        <a class="button button-clear button-positive" href="#/profile">
+            <button class="button button-clear button-positive">Cancel</button>
+        </a>
+        <button class="button icon-right  ion-edit button-positive" ng-click="updateProfile()">Update</button>
+    </ion-content>
+</ion-view>

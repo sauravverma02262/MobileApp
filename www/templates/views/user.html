@@ -1,0 +1,36 @@
+<ion-view view-title="User Profile">
+    <ion-content has-subheader="true">
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/profile">
+                <img src="./img/{{users.imageUrl}}">
+                <h2>{{users.firstname}}</h2>
+                <p>{{users.email}}</p>
+
+                <!-- <ion-option-button class="button-assertive" ng-click="remove(user)">
+                    Delete
+                </ion-option-button> -->
+            </ion-item>
+        </ion-list>
+        <div class="card">
+            <div class="list">
+                <a class="item item-icon-left" href="#/profile">
+                    Profile  {{users.profileDetails}}<i class="icon ion-person"></i>
+                </a>
+                <a class="item item-icon-left" href="#/images/{{user.id}}">
+                    Photo <i class="icon ion-images"></i> 
+                </a>
+                <a class="item item-icon-left" href="#/videos/{{user.id}}">
+                    Video <i class="icon ion-social-youtube"></i> 
+                </a>
+                <a class="item item-icon-left" href="#/setting">
+                    Settings  <i class="icon ion-ios-gear"></i>
+                </a>
+                <a class="item item-icon-left" href="#/friends">
+                    Friends  <i class="icon ion-ios-people"></i>
+                </a>
+
+                <a href="./img/"+{{user.imageUrl}} >./img/{{user.imageUrl}}</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

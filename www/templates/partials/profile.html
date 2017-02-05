@@ -1,0 +1,24 @@
+<ion-view view-title="Profile">
+    <div class="bar bar-header">
+        <button class="button icon ion-chevron-left" ng-click="back()"></button>
+        <h1 class="title">{{userProfile.firstname}} Profile</h1>
+        <button class="button button-clear button-positive" ng-click="editProfile(profile._id)">Edit</button>
+    </div>
+    <ion-content has-subheader="true" style="margin-top:50px;">
+        <div class="card">
+            <div class="list">
+                <div class="item ">
+                    About : {{profile.discription}}
+                </div>
+                <div class="item">
+                    Address :
+                    <hr>
+                    <div>State : {{profile.address.state}}</div>
+                    <div>City : {{profile.address.city}} </div>
+                    <div>Country : {{profile.address.country}}</div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-nav-view name="profile-edit"></ion-nav-view>
+</ion-view>
