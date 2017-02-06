@@ -6,9 +6,9 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 var db = null;
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+var myApp = angular.module('starter', ['ionic', 'ngCordova'])
 
-.run(function($ionicPlatform, $cordovaSQLite) {
+myApp.run(function($ionicPlatform, $cordovaSQLite) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -40,29 +40,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-
-    // Ionic uses AngularUI Router which uses the concept of states
-    // Learn more here: https://github.com/angular-ui/ui-router
-    // Set up the various states which the app can be in.
-    // Each state's controller can be found in controllers.js
-   
+myApp.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-
-    // setup an abstract state for the tabs directive
-        .state('tab', {
-            url: '/tab',
-            abstract: true,
-            templateUrl: 'templates/tabs.html'
-        })
         .state('app', {
             url: '/app',
             abstract: true,
             templateUrl: 'templates/app.html'
         })
-
-    .state('app.login', {
+        .state('app.login', {
             url: '/login',
             views: {
                 'user-login': {
@@ -70,7 +56,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     controller: 'loginCtrl'
                 }
             }
-        }).state('signup', {
+        })
+        .state('signup', {
             url: '/signup',
             templateUrl: 'templates/partials/forms/signUp.html',
             controller: "signUpCtrl"
@@ -81,11 +68,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             url: '/user',
             templateUrl: 'templates/views/user.html',
             controller: 'userCtrl'
-        }).state('profile', {
+        })
+        .state('profile', {
             url: '/profile',
             templateUrl: 'templates/partials/profile.html',
             controller: 'profileCtrl'
-        }).state('editProfile', {
+        })
+        .state('editProfile', {
             url: '/edit',
             templateUrl: 'templates/partials/forms/editProfile.html',
             controller: 'profileCtrl'
@@ -99,7 +88,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             url: '/videos/:videoId',
             templateUrl: 'templates/partials/videos.html',
             controller: 'videoCtrl'
-        }).state('setting', {
+        })
+        .state('setting', {
             url: '/setting',
             templateUrl: 'templates/partials/settings.html',
             controller: 'settingCtrl'
@@ -107,88 +97,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             url: '/friends',
             templateUrl: 'templates/partials/friends.html'
 
+        });
+
+    $stateProvider
+        .state('netaapp', {
+            url: '/netaapp',
+            abstract: true,
+            templateUrl: 'templates/Netaji/netaApp.html'
         })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-        url: '/dash',
-        views: {
-            'tab-dash': {
-                templateUrl: 'templates/tab-dash.html',
-                controller: 'DashCtrl'
-            }
-        }
-    })
-
-    .state('tab.chats', {
-            url: '/chats',
+        .state('netaapp.login', {
+            url: '/login',
             views: {
-                'tab-chats': {
-                    templateUrl: 'templates/tab-chats.html',
-                    controller: 'ChatsCtrl'
+                'user-login': {
+                    templateUrl: 'templates/Netaji/forms/login.html',
+                    controller: 'loginCtrl'
                 }
             }
         })
-        .state('tab.chat-detail', {
-            url: '/chats/:chatId',
+        .state('netaapp.signup', {
+            url: '/signup',
             views: {
-                'tab-chats': {
-                    templateUrl: 'templates/chat-detail.html',
-                    controller: 'ChatDetailCtrl'
+                'user-signup': {
+                    templateUrl: 'templates/Netaji/forms/signUp.html',
+                    controller: 'signUpCtrl'
                 }
             }
-        })
-
-    .state('tab.account', {
-        url: '/account',
-        views: {
-            'tab-account': {
-                templateUrl: 'templates/tab-account.html',
-                controller: 'AccountCtrl'
-            }
-        }
-    });
+        });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/netaapp/login');
 
 });

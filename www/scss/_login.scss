@@ -1,3 +1,13 @@
-.bar{
-	background: $top-header;
+.bar {
+	@include main-back-color();
+    .title{
+    	color:white;
+    }
 }
+
+.card-image {
+       padding-top: 20px;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+

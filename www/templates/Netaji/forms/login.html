@@ -1,0 +1,31 @@
+<ion-view view-title="Login">
+    <div class="bar bar-header ">
+        <h1 class="title">Login</h1>
+    </div>
+    <ion-content class="padding">
+        <div class="list card card-image">
+            <div class="item item-body">
+                <img class="full-image" src="./img/netaApp/loginpage.png">
+            </div>
+        </div>
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-model="userLogin.firstname" placeholder="E-mail address">
+            </label>
+        </div>
+        <div class="list">
+            <label class="item item-input">
+                <input type="password" ng-model="userLogin.password" placeholder="Password">
+            </label>
+        </div>
+        <button class="button button-block fb-button" ng-click="submit()">
+            Login
+        </button>
+        <button class="button button-block fb-button" ng-click="GotoNetaSignUp()">SignUp</button>
+        <div class="row">
+        	<div class="col col-67 col-offset-33 " style="text-align: right;">
+        		forgot password?
+        	</div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,66 @@
+<ion-view view-title="SignUp">
+    <div class="bar bar-header">
+        <h1 class="title">SignUp</h1>
+    </div>
+    <ion-content class="padding" style="margin-top:50px;">
+        <div class="list">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" ng-model="user.firstname" placeholder="First Name">
+                </label>
+            </div>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" ng-model="user.lastname" placeholder="Last Name">
+                </label>
+            </div>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" ng-model="user.email" placeholder="E-mail address">
+                </label>
+            </div>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" ng-model="user.contact" placeholder="Contact">
+                </label>
+            </div>
+            
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Login Type :
+                    </div>
+                    <select ng-model="user.type">
+                        <option value="User" selected>User</option>
+                        <option value="Neta">Neta</option>
+                    </select>
+                </label>
+            </div>
+            <label class="item item-input">
+                <input type="password" ng-model="user.password" placeholder="Password">
+            </label>
+        </div>
+        <a class="button button-clear button-positive" href="#/app/login">
+            <button class="button button-clear button-positive" href="#/app/login">Login</button>
+        </a>
+        <button class="button button-balanced" ng-click="registerUser()">
+            SignUp <i class="ion-android-arrow-forward"></i>
+        </button>
+
+        <div class="card">{{SuccessMessage}}</div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                <ion-list>
+                    <ion-item ng-repeat="user in users" class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/profile/{{user.id}}">
+                        {{user.firstname}} {{user.lastname}} {{user.email}} {{user.gender}} {{user.password}} <i ng-click="deleteUser(user)" class="ion-close-circled"></i>
+                    </ion-item>
+                </ion-list>
+                <ion-list>
+                    <ion-item ng-repeat="user in users" class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" >
+                        {{user.errorMessage}}
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

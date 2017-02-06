@@ -20,7 +20,17 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-actionsheet",
+    "cordova-plugin-file",
+    "cordova-plugin-spinner-dialog",
+    "cordova-plugin-vibration",
+    "cordova-plugin-x-toast",
+    "cordova-plugin-camera",
+    "cordova-sqlite-storage",
+    "cordova-plugin-compat"
+
+
   ],
   "cordovaPlatforms": []
 }
